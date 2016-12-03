@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome</title>
+  </head>
+  <body>
+
+    <h1>Welcome to My Website!</h1>
+
+    {% if name %}
+    <p>Hello, {{ name }}.</p>
+    {% else %}
+    <form method='post'>
+      <input type="text" placeholder="Enter your name" name="username">
+      <button type="submit">Submit!</button>
+    </form>
+    {% endif %}
+    <hr>
+    <h3>Past Users</h3>
+    <ul>
+    {% for user in users %}
+      <li>{{user.name}} -- {{user.frequency}}</li>
+    {% endfor %}
+    <ul>
+  </body>
+</html>
